@@ -3,6 +3,10 @@
 #include <SPI.h>
 #include <Servo.h>
 
+#define RED_PIN 32
+#define YELLOW_PIN 33
+#define GREEN_PIN 25
+
 // Hard coded enumerator
 #define RED_STATE 0
 #define RED_YELLOW_STATE 1
