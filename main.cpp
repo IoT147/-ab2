@@ -3,16 +3,19 @@
 #include <SPI.h>
 #include <Servo.h>
 
+
 #define RED_PIN 32
 #define YELLOW_PIN 33
 #define GREEN_PIN 25
-
+#define BUZZER 36
+#define BUTTON 0
 // Hard coded enumerator
 #define RED_STATE 0
 #define RED_YELLOW_STATE 1
 #define YELLOW_STATE 2
 #define GREEN_STATE 3
-
+/*When in green the buzzer must be 500 ms on and 1500 ms off; when in red the buzzer must be 250 ms on and 250 ms off.
+*/
 #define RED_MILLIS 10000
 
 int tl_state;           // Traffic light state.
@@ -24,6 +27,8 @@ void setup()
     pinMode(RED_PIN, OUTPUT); 
     pinMode(YELLOW_PIN, OUTPUT); 
     pinMode(GREEN_PIN, OUTPUT);
+    pinMode(BUZZER, OUTPUT);
+    pinMode(BUTTON, INPUT);
 
     // Initial state for states and timers.. 
     tl_state = RED_STATE;
